@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Example</title>
+    <style>
+        /* Simple styling for buttons and span */
+        .counter-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #counter {
+            display: inline-block;
+            min-width: 50px;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="counter-container">
+    <button id="decrementButton">-</button>
+    <span id="counter">0</span>
+    <button id="incrementButton">+</button>
+</div>
+
+<script>
+    // Initialize counter variable
+    let counter = 0;
+
+    // Select elements from the DOM
+    const counterElement = document.getElementById('counter');
+    const incrementButton = document.getElementById('incrementButton');
+    const decrementButton = document.getElementById('decrementButton');
+
+    // Function to update the counter display
+    function updateCounterDisplay() {
+        counterElement.textContent = counter;
+    }
+
+    // Increment button event listener
+    incrementButton.addEventListener('click', function() {
+        counter++; // Increment the counter
+        updateCounterDisplay(); // Update the displayed counter value
+    });
+
+    // Decrement button event listener
+    decrementButton.addEventListener('click', function() {
+        counter--; // Decrement the counter
+        updateCounterDisplay(); // Update the displayed counter value
+    });
+</script>
+
+</body>
+</html>
